@@ -24,7 +24,15 @@ jobs:
         type: registry-image
         source:
           repository: golang
+      inputs:
+      - name: helloworld
       run:
-        path: echo
-        args: ["hello world"]
+        path: sh
+        args:
+        - -c
+        - |
+          #!/bin/bash
+
+          cd helloworld
+          go run helloworld.go
 
