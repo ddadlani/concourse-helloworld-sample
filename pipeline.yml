@@ -2,7 +2,7 @@
 resources:
 - name: helloworld
   type: git
-  source: {uri: "https://github.com/ddadlani/concourse-sample"}
+  source: {uri: "https://github.com/ddadlani/concourse-helloworld-sample"}
 
 jobs:
 - name: unit-test
