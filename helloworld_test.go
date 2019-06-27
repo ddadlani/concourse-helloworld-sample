@@ -5,4 +5,5 @@ import (
 )
 
 func TestHandler(t *testing.T) {
+	t.Fail()
 }
