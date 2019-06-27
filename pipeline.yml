@@ -1,0 +1,30 @@
+---
+resources:
+- name: helloworld
+  type: git
+  source: {uri: "https://github.com/ddadlani/concourse-sample"}
+
+jobs:
+- name: unit-test
+  plan:
+  - get: helloworld
+    trigger: true
+  - task: test
+    file: helloworld/test.yml
+
+- name: run-helloworld
+  plan:
+  - get: helloworld
+    trigger: true
+    passed: [unit-test]
+  - task: run
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: golang
+      run:
+        path: echo
+        args: ["hello world"]
+
