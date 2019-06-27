@@ -6,9 +6,8 @@ image_resource:
   source:
     repository: golang
 
-
 inputs:
 - name: helloworld
 
 run:
-  helloworld/test.sh
+  path: helloworld/test.sh
