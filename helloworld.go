@@ -10,6 +10,6 @@ func SetTarget(target string) {
 }
 
 func main() {
-	SetTarget("CF Onboarding Week")
+	SetTarget("CF Onboarding Week September")
 	fmt.Println("Hello World " + os.Getenv("TARGET"))
 }
